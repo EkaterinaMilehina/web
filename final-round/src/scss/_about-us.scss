@@ -1,0 +1,190 @@
+.about-us {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include tablet {
+        gap: 32px;
+    }
+
+    @include desktop {
+        padding: 42px 32px;
+        gap: 8px;
+    }
+
+    &__title {
+        @include title;
+        display: flex;
+        gap: 16px;
+        margin: 0;
+
+        @include tablet {
+            gap: 24px;
+        }
+
+        @include desktop {
+            gap: 0;
+            position: relative;
+        }
+
+        &:before {
+            content: '';
+            display: inline-block;
+            left: -16px;
+            width: 4px;
+            height: 40px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background: $pattern-color;
+
+            @include desktop {
+                position: absolute;
+                left: -30px;
+            }
+        }
+    }
+
+    &__navigation {
+        padding-left: 16px;
+
+        @include tablet {
+            padding-left: 24px;
+        }
+
+        @include desktop {
+            padding-left: 0;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow-x: auto;
+
+        @include desktop {
+            padding-left: 0;
+            overflow: visible;
+            flex-wrap: wrap;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    &__menu-link {
+        @include menu-text;
+        display: block;
+        padding: 8px 16px;
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: $main-text-color;
+        }
+    }
+
+    &__active {
+        background: $white;
+        border: 2px solid $border-active-color;
+        border-radius: 6px; 
+        color: $menu-text-color;
+        outline: none;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: start;
+            gap: 48px;
+        }
+
+        @include desktop {
+            gap: 36px;
+        }
+    }
+
+    &__content-text {
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include tablet {
+            padding-right: 0;
+            padding-left: 24px;
+            gap: 10px;;
+        }
+
+        @include desktop {
+            padding: 0;
+            gap: 14px;
+        }
+    }
+
+    &__text-item {
+        @include text-item;
+
+        @include tablet {
+            line-height: 20px;
+        }
+    }
+
+    &__text {
+        min-width: 90%;
+        height: 90px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include tablet {
+            min-width: 312px;
+            height: 160px;
+        }
+
+        @include desktop {
+            padding: 0;
+            min-width: 490px;
+        }
+    }
+
+    &__button-hide {
+        display: none;
+    }
+
+    &__content-img {
+        @include tablet {
+            padding-right: 24px;
+            min-width: 50%;
+            height: auto;
+        }
+
+        @include desktop {
+            padding: 0;
+            min-width: 48%;
+            height: auto;
+        }
+    }
+
+    &__content-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    &__content-text &__button-more,  &__content-text &__button-hide {
+        @include tablet {
+            padding-left: 0;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+}

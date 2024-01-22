@@ -1,0 +1,130 @@
+.header {
+    padding: 18px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    border-bottom: 1px solid $band-color;
+
+    @include tablet {
+        padding: 18px 24px;
+    }
+
+    @include desktop {
+        padding: 0;
+        border: none;
+    }
+
+    &__menu-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @include tablet {
+            gap: 20px;
+        }
+
+        @include desktop {
+            display: none;
+        }
+
+        &::after {
+            content: '';
+            display: inline-block;
+            background: $light-gray;
+            border-radius: 1px;
+            width: 2px;
+            height: 32px;
+        }
+    }
+
+    &__menu-right-icon {
+        display: flex;
+    }
+
+    &__menu_hidden {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            gap: 16px;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__informations {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @include tablet {
+            order: 1;
+        }
+
+        @include desktop {
+            position: absolute;
+            top: 42px;
+            right: 32px;
+            padding: 0;
+        }
+    }
+
+    &__informations-link {
+        display: flex;
+        align-items: center;
+
+        @include desktop {
+            gap: 8px;
+        }
+    }
+
+    &__informations-text {
+        display: none;
+
+        @include desktop {
+            display: block;
+            @include menu-text;
+        }
+    }
+
+    &__logo {
+        width: 97px;
+        height: 51px;
+
+        @include tablet {
+            order: 1;
+        }
+    }
+
+    &__img {
+        width: 40px;
+        height: 40px;
+    }
+
+    &__menu-right {
+        @include tablet {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        &::after {
+            @include tablet {
+                content: '';
+                display: inline-block;
+                background: $light-gray;
+                border-radius: 1px;
+                width: 2px;
+                height: 32px;
+            }
+
+            @include desktop {
+                display: none;
+            }
+        }
+    }
+}
+ 

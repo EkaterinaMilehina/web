@@ -1,0 +1,54 @@
+.footer {
+    background-color: $background-main;
+    padding: 16px 16px 19px 16px;
+    border-top: 1px solid $band-color;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include tablet {
+        background-color: $background-main;
+        padding: 32px 24px 25px 24px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    @include desktop {
+        padding: 83px 32px 21px 32px;
+    }
+
+    &__content {
+        @include text-bottom;
+        text-align: center;
+
+        &:not(:last-child) {
+            @include tablet {
+                white-space: nowrap;
+            }
+        }
+
+        &:first-child {
+            @include tablet {
+                text-align: left;
+                width: 33%;
+            }
+        }
+
+        &:last-child {
+            @include tablet {
+                text-align: right;
+                width: 33%;
+            }
+        }
+    }
+
+    &__content-conf {
+            cursor: pointer;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: $main-text-color;
+            }
+    }
+}

@@ -1,0 +1,33 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    @include tablet {
+        height: auto;
+    }
+}
+
+.swiper-wrapper {
+    height: 72px;
+}
+
+.swiper-slide {
+    width: 224px;
+    height: 72px;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: $swiper-pagination;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $gray;
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    padding-top: 16px;
+    position: static;
+}

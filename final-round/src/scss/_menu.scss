@@ -1,0 +1,199 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 320px;
+    height: 100%;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    display: none;
+    z-index: 100;
+
+    @include tablet {
+        gap: 268px;
+    }
+
+    @include desktop {
+        display: flex;
+        gap: 241px;
+        position: initial;
+        box-shadow: none;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+
+        @include tablet {
+            gap: 50px;
+        }
+
+        @include desktop {
+            gap: 37px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 16px 0 16px;
+
+        @include tablet {
+            padding: 18px 24px 0 24px;
+        }
+    }
+    
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__right {
+        display: flex;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding-left: 16px;
+
+        @include tablet {
+            padding-left: 24px;
+            gap: 32px;
+        }
+
+        @include desktop {
+            gap: 28px;
+        }
+    }
+
+    &__link, &__contacts-email, &__language-button{
+        @include main-text;
+    }
+
+    &__link {
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: $menu-text-color;
+            outline: none;
+        }
+    }
+    
+    &__active {
+        position: relative;
+        color: $menu-text-color;
+        outline: none;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 32px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background-color: $pattern-color;
+            outline: none;
+
+            @include tablet {
+                left: -24px;
+            }
+        }
+    }
+
+    &__footer {
+        padding-left: 16px;
+        padding-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @include tablet {
+            padding-left: 24px;
+            gap: 40px;
+        }
+    }
+
+    &__connection {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__connection-icon {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 12px
+    }
+
+    &__contacts-phone {
+        @include aside-text;
+    }
+
+    &__language {
+        display: flex;
+        gap: 7px;
+    }
+
+    &__language-button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            color: $menu-text-color;
+        }
+
+        &:active,
+        &:focus {
+            @include menu-text;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .menu {
+            width: 100%;
+        }
+    }
+}
+
+.header {
+    &__burger-close {
+        @include desktop{
+            display: none;
+        }
+    }
+    
+    &__logo {
+        width: 97px;
+        height: 51px;
+    }
+    
+    &__img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+
+

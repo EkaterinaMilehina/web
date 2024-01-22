@@ -1,18 +1,14 @@
-@import "mixins";
-@import "fonts";
+@import "mixin";
 @import "vendor";
 @import "vars";
+@import "fonts";
 @import "settings";
-
-
-.header {
-  text-align: center;
-  & img {
-    width: 30%;
-  }
-}
-
-.welcome-title {
-  margin-top: 50px;
-  font-size: 6em;
-}
+@import "header";
+@import "about-us";
+@import "swiper";
+@import "services";
+@import "repair";
+@import "price";
+@import "footer";
+@import "menu";
+@import "modal";

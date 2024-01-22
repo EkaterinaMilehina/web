@@ -1,0 +1,213 @@
+.price {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include tablet {
+        gap: 31px;
+    }
+
+    &__header {
+        display: none;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: 52% 13% 33%;
+            padding-left: 16px;
+        }
+
+        @include desktop {
+            grid-template-columns: 46% 22% 32%;
+            padding-left: 24px;
+        }
+    }
+
+    &__list {
+        padding-left: 16px;
+
+        @include tablet {
+            height: auto;
+            gap: 0;
+            flex-direction: column;
+            border-radius: 6px;
+            background: $white;
+            padding: 0;
+        }
+
+        & .swiper-slide {
+            width: 260px;
+            height: 200px;
+
+            @include tablet {
+                width: 100%;
+                height: auto;
+                padding: 16px 0;
+                display: grid;
+                grid-template-columns: 82% 17%;
+            }
+
+            @include desktop {
+                grid-template-columns: 88% 12%;
+            }
+
+            &:not(:last-child) {
+                @include tablet {
+                    border-bottom: 1px solid $light-gray;
+                }
+            }
+        }
+    }
+
+    &__el {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: 61% 13% 14%;
+            white-space: nowrap;
+            grid-column-gap: 22px;
+            align-content: center;
+        }
+
+        @include desktop {
+            grid-template-columns: 53% 26% 21%;
+            gap: 0;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__item {
+        position: relative;
+        padding: 16px;
+        width: 260px;
+        height: 200px;
+        border-radius: 6px;
+        background-color: $white;
+    }
+
+    &__item-title {
+        @include text-bottom;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__item-content {
+        @include text-item;
+    }
+
+    &__link {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        position: absolute;
+        left: 125px;
+        top: 152px;
+        padding-left: 12px;
+        color: $white;
+        @include btn-text;
+        text-transform: uppercase;
+        width: 119px;
+        height: 32px;
+        border-radius: 16px;
+        background-color: $link-color;
+        transition: .3s ease-in-out;
+
+        @include tablet {
+            position: static;
+            justify-self: end;
+        }
+
+        &:hover, &:focus {
+            background-color: $link-color-active;
+        }
+
+        &::after {
+            content: '';
+            background: url('../img/dropdown.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__content {
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include tablet {
+            padding: 0 24px;
+        }
+
+        @include desktop {
+            padding: 0 32px;
+        }
+    }
+
+    &__info {
+        @include text-item;
+        line-height: 20px;
+
+        @include tablet {
+            width: 421px;
+        }
+    }
+
+    &__offer {
+        @include main-text;
+        padding-right: 24px;
+        background-image: url('../img/more.svg');
+        background-repeat: no-repeat;
+        background-position: right center;
+        transition: .3s ease-in-out;
+
+        &:hover, &:focus {
+            opacity: 0.5;
+        }
+    }
+
+    &__block {
+        @include tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 24px;
+        }
+        
+
+        @include desktop {
+            padding: 0 32px;
+        }
+
+        & .swiper-wrapper {
+            height: 200px;
+    
+            @include tablet {
+                box-sizing: border-box;
+                height: auto;
+                gap: 0;
+                padding: 0 16px;
+            }
+
+            @include desktop {
+                padding: 0 24px;
+            }
+        }
+    }
+
+    &__title {
+        @include text-bottom;
+    }
+}
+
